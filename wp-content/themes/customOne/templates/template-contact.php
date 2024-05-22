@@ -52,7 +52,7 @@ else
 }
 function sendForm()
 {
-        $myMail = 's.elliot.perez@gmail.com';
+        $myMail = 'placeholder@gmail.com';
         $senderName = $_POST['dat-name'];
         $senderMail = $_POST['dat-email'];
         if(is_email($senderMail))
