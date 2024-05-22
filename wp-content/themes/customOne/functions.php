@@ -62,16 +62,6 @@ function set_from_name()
 add_filter('wp_mail_from', 'set_from');
 add_filter('wp_mail_from_name', 'set_from_name');
 
-// Function to set the 'Reply-To' email dynamically
-// function set_mail_from_reply_to( $phpmailer ) 
-// {
-//     // Assuming $_POST['email'] is the field where the user inputs their email address
-//     if ( isset( $_POST['dat-email'] ) && is_email( $_POST['dat-email'] ) ) {
-//     $phpmailer->setFrom( get_option('admin_email'), get_option('blogname') );
-//     $phpmailer->addReplyTo( $_POST['dat-email'], $_POST['dat-name'] ); // Name is optional
-//     }
-// }
-
 add_action('wp_mail_failed', 'smtplog_mailer_errors', 10, 1);
 add_action( 'phpmailer_init', 'my_phpmailer_setup', 10, 1);
 //add_action( 'phpmailer_init', 'set_mail_from_reply_to', 999, 1);
@@ -93,13 +83,5 @@ function mytheme_custom_excerpt_length( $length )
     return 30;
 }
 add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
-// function disable_autop_shortcode($atts, $content = '') 
-// {
-//     remove_filter('the_content', 'wpautop');
-//     $content = do_shortcode(shortcode_unautop($content));
-//     add_filter('the_content', 'wpautop');
-//     return $content;
-// }
-// add_shortcode('no_autop', 'disable_autop_shortcode');
 remove_filter('the_content', 'wpautop');
 ?>
