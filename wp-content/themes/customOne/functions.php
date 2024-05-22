@@ -43,13 +43,13 @@ function my_phpmailer_setup(PHPMailer $phpmailer)
     $phpmailer->SMTPDebug = 0; // write 0 if you don't want to see client/server communication in page
     $phpmailer->SMTPAuth = true;
     $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $phpmailer->Username = 's.elliot.perez@gmail.com';
-    $phpmailer->Password = 'hvvj vuud jqro zdig';
-    $phpmailer->From = 's.elliot.perez@gmail.com';
+    $phpmailer->Username = 'placeholder@gmail.com';
+    $phpmailer->Password = 'placeholder';
+    $phpmailer->From = 'placeholder@gmail.com';
     $phpmailer->FromName = 'lvpart.com';
 }
 
-$GLOBALS['custom_from_email'] = 's.elliot.perez@gmail.com';
+$GLOBALS['custom_from_email'] = 'placeholder@gmail.com';
 $GLOBALS['custom_from_name'] = 'lvpart.com';
 function set_from()
 {

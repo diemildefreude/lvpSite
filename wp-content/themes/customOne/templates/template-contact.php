@@ -10,8 +10,7 @@ get_header();
 <?php
 if (isset($_POST['dat-submit']))
 {
-    $cfSecret = "0x4AAAAAAAZVymx9hqO2HXdC37UvyN7pvq8";
-    //$cfSecret = "3x00000000000000000000FF"; //force challenge
+    $cfSecret = "3x00000000000000000000FF"; //force challenge
     //$cfSecret = "2x00000000000000000000AB"; //fail
     $remoteAddr = $_SERVER['REMOTE_ADDR'];
     $cfUrl = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -29,8 +28,6 @@ if (isset($_POST['dat-submit']))
     if(curl_errno($cUrl))
     {
         $errorMessage = curl_error($cUrl);
-        //echo "<div class='submit-notice error'>cURL error: $errorMessage</div>";
-        //echo "<div class='submit-notice error'>human check failed</div>";
 
         echo "<div class='submit-notice error'>human check failed. message not sent.</div>";
     }
@@ -45,7 +42,6 @@ if (isset($_POST['dat-submit']))
         {     
             sendForm();
             echo "<div class='submit-notice'> Your message has been sent. </div>";
-            //echo "<div class='submit-notice error'>just a test, bro.</div>";
         }
     }
     curl_close($cUrl);
@@ -95,7 +91,7 @@ function sendForm()
 
         <label for="dat-message">message</label>
         <textarea id="dat-message" name="dat-message" rows="6" placeholder="your message" required></textarea>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAZVymeABth5Qvvz"></div>
+        <div class="cf-turnstile" data-sitekey="placeholder"></div>
         <button type="submit" name="dat-submit">submit</button>
     </form>
 </div>
