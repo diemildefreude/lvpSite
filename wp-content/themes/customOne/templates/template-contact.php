@@ -69,8 +69,6 @@ function sendForm()
         try
         {
             $sent = wp_mail($myMail, $subject, $txt, $headers);
-            //$sent = wp_mail($myMail, 'howdy', 'nice to see you');
-            // echo $sent ? "WAHOO!<br>" : "umm...<br>";
         }
         catch(Exception $e)
         {

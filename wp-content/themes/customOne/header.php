@@ -31,9 +31,18 @@
     <meta name="twitter:title" content="<?php echo $title ?>">
     <meta name="twitter:description" content="<?php echo $description ?>">
     <meta name="twitter:image" content="<?php echo $ogImg ?>">
-    <?php wp_head();?>
+    <?php wp_head();
+    
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('PHP: " . $output . "' );</script>";
+    }
+    ?>
 </head>
 <body>
-<?php if(!is_front_page()):?>
+<?php if(!is_front_page()): //header is nested differently on front page?>
     <?php get_template_part('includes/section', 'header');?>
 <?php endif; ?>

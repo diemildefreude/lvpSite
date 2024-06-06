@@ -16,9 +16,11 @@
         </div>
         <div class="article-body">            
             <h1 class="article-title"><?php the_title(); ?></h1>
-        <?php     
-            get_template_part('includes/section', 'blogcontent');
-            // wp_link_pages();
+        <?php $meta = get_post_meta($post->ID, 'year_medium_size', true); 
+            if($meta):?>
+                <h2 class="year-medium-size"><?php echo $meta; ?></h2>
+        <?php endif;
+           get_template_part('includes/section', 'blogcontent');
         ?>
         </div>
     </div>  

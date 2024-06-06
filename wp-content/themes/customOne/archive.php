@@ -3,8 +3,10 @@
 <section class="page-wrap header-offset archive">
     <h1 class="article-title"><?php echo single_cat_title();?></h1>
     <?php get_template_part('includes/section', 'archive');?>
-    <?php previous_posts_link(); ?>
-    <?php next_posts_link(); ?>
+    <div class="previous-next-container">
+        <?php previous_posts_link(); ?>
+        <?php next_posts_link(); ?>
+    </div>
     
     <!-- <?php
     $big = 999999999;
