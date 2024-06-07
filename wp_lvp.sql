@@ -1377,7 +1377,7 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'sep', '$P$BB/12f75tqFE/L8VqiEysEfCtT10O..', 'sep', 's.elliot.perez@gmail.com', 'http://localhost/website/wordpress', '2024-04-21 15:23:52', '', 0, 'sep');
+(1, 'sep', '$P$Bjp.jRlXL7k4SW3kXiMQ4TMpvn6KWg/', 'sep', 's.elliot.perez@gmail.com', 'http://localhost/website/wordpress', '2024-04-21 15:23:52', '', 0, 'sep');
 
 -- --------------------------------------------------------
 
