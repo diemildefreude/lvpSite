@@ -9,7 +9,7 @@ php 7.4+ and Wordpress.
 
 front page
 ----------
-the front page features a randomized, interactive display of fading images, randomly selected from all the archives. Because drawing gradient borders for moving images in css is performance-costly, every archive has a custom field (banner_img), which holds a link to version of the image which has had gradients pre-applied to its borders. The motion and interactiviy of these images is driven by banner.js. The images are also not set with src immediately, but are instead loaded asynchronously- first lores versions of the images, which are then replaced with hires versions as soon as the latter are loaded. This allows images to be visible as soon as possible, even with slower internet connections.
+the front page features a randomized, interactive display of fading images, randomly selected from all the archives. Because drawing gradient borders for moving images in css is performance-costly, every archive has a custom field (banner_img), which holds a link to a version of the image which has had gradients pre-applied to its borders. The motion and interactiviy of these images is driven by banner.js. The images are also not set with src immediately, but are instead loaded asynchronously- first lores versions of the images, which are then replaced with hires versions as soon as the latter are loaded. This allows images to be visible as soon as possible, even with slower internet connections.
 
 setup
 ----------
