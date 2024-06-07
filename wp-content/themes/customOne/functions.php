@@ -74,9 +74,8 @@ register_nav_menus($menus);
 
 add_theme_support('post-thumbnails');
 add_image_size('full-size', 1920, 1920, false);
-add_image_size('small-size', 960, 540, false);
-add_image_size('blog-large', 800, 800, true);
-add_image_size('blog-small', 400, 400, true);
+add_image_size('small-size', 960, 960, false);
+add_image_size('blog-large', 650, 650, true);
 
 function mytheme_custom_excerpt_length( $length ) 
 {

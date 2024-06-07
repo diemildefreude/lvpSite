@@ -4,7 +4,7 @@
     $title = "Lourdes Perez Art Archive";
     $description = "The Paintings of Lourdes Vasquez Perez";
     $ogType = "website";
-    $ogImg = "https://lvpart.com/wp-content/uploads/2024/05/ogImg.png";    
+    $ogImg = "https://lvpart.com/wp-content/uploads/2024/06/ogImg.png";    
     //echo $ogImg . "<br>";
 ?>
 <!DOCTYPE html>
