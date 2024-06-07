@@ -15,7 +15,7 @@ setup
 ----------
 1) set up a local server using something like [Xampp](https://www.apachefriends.org/download.html)
 2) download Wordpress [here](https://wordpress.org/download/) and place the Wordpress folder inside your localhost directory (in the case of Xampp, probably c:/xampp/htdocs)
-3) delete the wp-content folder from the Wordpress download and clone this repository into the Wordpress folder (eg. c:/xampp/htdocs/wordpress)
+3) delete the wp-content folder from the Wordpress download and clone this repository's root files into the Wordpress folder (eg. c:/xampp/htdocs/wordpress)
 4) start the local server. In Xampp, this is done by pressing the start buttons for Apache and MySQL.
 5) open phpAdmin. In Xampp: MySql>Admin
 6) create a database called wp_lvp (or something else). Set the name of the database in wp-config.php: `define( 'DB_NAME', 'wp_lvp' );`
