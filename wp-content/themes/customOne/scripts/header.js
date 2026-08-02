@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', ()=>
             didScroll = false;
             hasScrolled();
         }
-        }, 150);
+    }, 150);
 });
 
 function hasScrolled()

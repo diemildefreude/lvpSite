@@ -77,10 +77,10 @@ add_image_size('full-size', 1920, 1920, false);
 add_image_size('small-size', 960, 960, false);
 add_image_size('blog-large', 650, 650, true);
 
-function mytheme_custom_excerpt_length( $length ) 
+function mytheme_custom_excerpt_length( int $length ) 
 {
-    return 15;
+    return $length ;
 }
-add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 15 );
 remove_filter('the_content', 'wpautop');
 ?>

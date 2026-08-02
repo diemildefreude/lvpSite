@@ -1,0 +1,50 @@
+services:
+  web:
+    build: .
+    container_name: lvpsite-web-1
+    volumes:
+      - .:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=${DB_USER:-root}
+      - WORDPRESS_DB_PASSWORD=${DB_PASS:-lvpsite_pass}
+      - WORDPRESS_DB_NAME=${DB_NAME:-wp_lvp}
+    depends_on:
+      - db
+    networks:
+      - npm_default
+      - default
+
+  db:
+    image: mysql:8.0
+    container_name: lvpsite-db-1
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS:-lvpsite_pass}
+      - MYSQL_DATABASE=${DB_NAME:-wp_lvp}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./wp_lvp.sql:/docker-entrypoint-initdb.d/wp_lvp.sql
+    networks:
+      - default
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: lvpsite-phpmyadmin-1
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=${DB_PASS:-lvpsite_pass}
+    depends_on:
+      - db
+    networks:
+      - npm_default
+      - default
+
+networks:
+  npm_default:
+    external: true
+
+volumes:
+  db_data:
