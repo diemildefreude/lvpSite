@@ -20,6 +20,7 @@
 # Configuration
 # wp-config.php is unignored so it can be deployed via git with environment variable fallbacks
 .env
+*.sql
 
 # Example themes
 /wp-content/themes/twenty*/

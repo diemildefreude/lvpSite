@@ -7,7 +7,7 @@ services:
     environment:
       - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_USER=${DB_USER:-root}
-      - WORDPRESS_DB_PASSWORD=${DB_PASS:-lvpsite_pass}
+      - WORDPRESS_DB_PASSWORD=${DB_PASS}
       - WORDPRESS_DB_NAME=${DB_NAME:-wp_lvp}
     depends_on:
       - db
@@ -21,7 +21,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-lvpsite_pass}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
       - MYSQL_DATABASE=${DB_NAME:-wp_lvp}
     volumes:
       - db_data:/var/lib/mysql
@@ -35,7 +35,7 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_USER=root
-      - PMA_PASSWORD=${DB_PASS:-lvpsite_pass}
+      - PMA_PASSWORD=${DB_PASS}
     depends_on:
       - db
     networks:
